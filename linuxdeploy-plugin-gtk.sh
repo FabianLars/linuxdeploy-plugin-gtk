@@ -184,7 +184,7 @@ APPIMAGE_GTK_THEME="${APPIMAGE_GTK_THEME:-"Adwaita:$GTK_THEME_VARIANT"}" # Allow
 export APPDIR="${APPDIR:-"$(dirname "$(realpath "$0")")"}" # Workaround to run extracted AppImage
 export GTK_DATA_PREFIX="$APPDIR"
 export GTK_THEME="$APPIMAGE_GTK_THEME" # Custom themes are broken
-export GDK_BACKEND=x11 # Crash with Wayland backend on Wayland
+# export GDK_BACKEND=x11 # Crash with Wayland backend on Wayland - Edit: Doesn't seem to affect Tauri/webkitgtk apps
 export XDG_DATA_DIRS="$APPDIR/usr/share:/usr/share:$XDG_DATA_DIRS" # g_get_system_data_dirs() from GLib
 EOF
 
